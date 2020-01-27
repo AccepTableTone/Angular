@@ -1,7 +1,7 @@
 # Angular
 
 
-Drink: http://www.drink.acceptabletone.com
+Drink: http://drink.acceptabletone.com/index-angular.html
 
 Licks; http://licks.acceptabletone.com
 
