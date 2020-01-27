@@ -1,0 +1,8 @@
+.tab-container {
+  width: 100%;
+  padding-top: 5px;
+}
+.tab-container > img {
+  width: 100%;
+  margin-bottom: 10px;
+}

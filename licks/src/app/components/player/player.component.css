@@ -1,0 +1,8 @@
+.controls-container {
+  font-size: 30px;
+  text-align: center;
+}
+.controls-container i {
+  cursor: pointer;
+  margin: 5px 15px 5px 15px;
+}

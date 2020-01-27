@@ -1,0 +1,46 @@
+.title-container {
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+a {
+  text-decoration: none;
+  font-size: 9px !important;
+  color: #ccc;
+  position: relative;
+  top: -7px;
+}
+.arrow {
+  font-size: 55px;
+  position: fixed;
+  bottom: 20px;
+}
+.arrow:hover {
+  cursor: pointer;
+  color: #419c67;
+}
+
+.arrow-left {
+  left: 5px;
+}
+.arrow-right {
+  right: 5px;
+}
+
+.lick-count {
+  position: absolute;
+  top: 16px;
+  left: 50%;
+
+  width: 16px;
+  height: 16px;
+  z-index: 5px;
+  margin-left: -185px;
+}
+.lick-count > span {
+  position: relative;
+  font-size: 11px;
+  top: -15px;
+}

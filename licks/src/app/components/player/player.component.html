@@ -1,0 +1,40 @@
+<div>
+  <audio [src]="tabAudio" #player preload="none"></audio>
+</div>
+<div class="controls-container">
+  <i
+    class="fa fa-step-backward"
+    aria-hidden="true"
+    (click)="restartAudio()"
+  ></i>
+  <i
+    class="fa fa-play"
+    aria-hidden="true"
+    (click)="playAudio()"
+    [ngStyle]="{
+      color: playerIsPlaying ? onColor : offColor,
+      cursor: playerIsPlaying ? 'default' : 'pointer'
+    }"
+  ></i>
+  <i
+    class="fa fa-pause"
+    aria-hidden="true"
+    (click)="pauseAudio()"
+    [ngStyle]="{
+      color: playerIsPaused ? onColor : offColor,
+      cursor: playerIsPaused ? 'default' : 'pointer'
+    }"
+  ></i>
+  <i
+    class="fa fa-battery-half"
+    aria-hidden="true"
+    (click)="setAudioSpeed()"
+    [ngStyle]="{ color: playerIsOnSlow ? onColor : offColor }"
+  ></i>
+  <i
+    class="fa fa-refresh"
+    aria-hidden="true"
+    (click)="setAudioLooping()"
+    [ngStyle]="{ color: playerIsLooping ? onColor : offColor }"
+  ></i>
+</div>

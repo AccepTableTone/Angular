@@ -1,0 +1,39 @@
+<div class="content-container">
+  <div class="row content">
+    <div class="col-xs-6 col-xs-offset-2">
+      <div class="logo-body">
+        drink<span aria-hidden="true" class="{{ getLoaderStatus() }}"></span>
+      </div>
+    </div>
+    <div class="col-xs-4">
+      <div class="page-title-body">{{ statusString }}</div>
+    </div>
+  </div>
+  <div class="row content">
+    <div class="col-xs-2 cat-nav-body">
+      <nav-category (getDrinks)="getDrinks($event)"></nav-category>
+    </div>
+    <div
+      class="col-xs-8 content-body"
+      [ngStyle]="{ 'background-image': 'url(' + backgroundImage + ')' }"
+    >
+      <!-- binding in - drinList is passed in -->
+      <drink-list
+        [drinkList]="drinkList"
+        (getDrinks)="getDrinks($event)"
+        *ngIf="searchIsShowing == false"
+      ></drink-list>
+      <!-- binding out - 'getDrinks' is the output from the search component and is bound to the parent getDrinks service call -->
+      <search
+        *ngIf="searchIsShowing == true"
+        (getDrinks)="getDrinks($event)"
+      ></search>
+    </div>
+    <div class="col-xs-2 nav-body">
+      <nav-letter
+        (getDrinks)="getDrinks($event)"
+        (showSearch)="setSearchVisibility($event)"
+      ></nav-letter>
+    </div>
+  </div>
+</div>

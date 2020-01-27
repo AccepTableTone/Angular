@@ -1,0 +1,20 @@
+<div>
+  <div class="title-container">
+    <div class="lick-count">
+      <span>#{{ currentDataIndex + 1 }}</span>
+    </div>
+    LICKS & STUFF
+    <a href="https://www.musicradar.com" target="blank">care of musicradar</a>
+    <div class="arrow arrow-left" (click)="setPreviousLick()">
+      <i class="fa fa-arrow-circle-left"></i>
+    </div>
+    <div class="arrow arrow-right" (click)="setNextLick()">
+      <i class="fa fa-arrow-circle-right"></i>
+    </div>
+  </div>
+  <app-tab [fileUrl]="currentTabFile"></app-tab>
+  <app-player
+    *ngIf="!!currentAudioFile"
+    [fileUrl]="currentAudioFile"
+  ></app-player>
+</div>

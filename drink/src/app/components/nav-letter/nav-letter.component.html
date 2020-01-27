@@ -1,0 +1,20 @@
+<div class="ln-wrapper">
+    <div class="ln-scroller">
+        <div class="letternav-container">
+            <!-- magnifying glass - show search form -->
+            <div class='nav-item search-nav-item'>                
+                <div class="search-nav-item-icon" (click)="showSearchScreen()" >
+                    <span aria-hidden="true" class="fa fa-search"></span>
+                </div>                    
+            </div>
+            <!-- hash icon - search drinks by number -->
+            <div class='nav-item' (click)="getDrinksByLetter('99')">
+                <span aria-hidden="true" class="fa fa-hashtag"></span>
+            </div>
+            <!-- loop through letters -->
+            <div class='nav-item' *ngFor="let letter of letterNavList" (click)="getDrinksByLetter(letter)">
+                {{letter}}
+            </div>
+        </div>                
+    </div>
+</div>

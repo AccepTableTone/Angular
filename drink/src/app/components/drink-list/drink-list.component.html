@@ -1,0 +1,43 @@
+<div class="dl-wrapper">
+  <div class="dl-scroller">
+    <div class="list-container">
+      <div
+        class="drink-box"
+        *ngIf="drinkList !== null && drinkList.length === 0"
+      >
+        <div class="db-instructions">
+          Sorry, we don't have that.
+          <span aria-hidden="true" class="fa fa-frown-o"></span>
+        </div>
+      </div>
+      <!-- if we have drinks then loop through alternating alignment )-[..]-( -->
+      <div *ngIf="fullDrinkList !== null && fullDrinkList.length > 0">
+        <div
+          class="drink-box"
+          *ngFor="let drink of fullDrinkList"
+          [ngStyle]="{ float: drink.$id % 2 === 0 ? 'left' : 'right' }"
+        >
+          <div class="db-title">{{ drink.Name }}</div>
+          <div
+            class="db-ingredients"
+            *ngFor="let ingredient of drink.Ingredients"
+          >
+            <div>{{ ingredient }}</div>
+          </div>
+          <div class="db-instructions">{{ drink.Instructions }}</div>
+          <div class="db-category">{{ drink.Category }}</div>
+          <div class="db-glass">{{ drink.Glass }}</div>
+        </div>
+      </div>
+    </div>
+    <div *ngIf="areMoreDrinks()" class="list-loader">
+      <div (click)="getMoreDrinks()">More..</div>
+    </div>
+    <div *ngIf="isLoadingDrinks()" class="list-loader">
+      <span
+        aria-hidden="true"
+        class="big-drink-icon fa fa-glass fa-spin"
+      ></span>
+    </div>
+  </div>
+</div>

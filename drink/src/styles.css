@@ -1,0 +1,377 @@
+/* You can add global styles to this file, and also import other style files */
+body {
+  background-color: #c30101;
+}
+#root {
+  min-width: 300px;
+}
+
+.fl {
+  float: left;
+}
+.fr {
+  float: right;
+}
+.clr {
+  clear: both;
+}
+.tac {
+  text-align: center;
+}
+.tar {
+  text-align: right;
+}
+.tal {
+  text-align: left;
+}
+
+.dn {
+  display: none;
+}
+.db {
+  display: block;
+}
+.margt-60 {
+  margin-top: 60px;
+}
+.margt-40 {
+  margin-top: 40px;
+}
+.margt-30 {
+  margin-top: 30px;
+}
+.margt-20 {
+  margin-top: 20px;
+}
+.margt-10 {
+  margin-top: 10px;
+}
+
+.margr-10 {
+  margin-top: 10px;
+}
+
+.margb-10 {
+  margin-bottom: 10px;
+}
+.margb-15 {
+  margin-bottom: 15px;
+}
+.margb-40 {
+  margin-bottom: 40px;
+}
+
+.padl-20 {
+  padding-left: 20px;
+}
+.padl-40 {
+  padding-left: 40px;
+}
+.padl-50 {
+  padding-left: 50px;
+}
+.pad-10 {
+  padding: 10px;
+}
+.pad-2 {
+  padding: 2px;
+}
+.pad-0 {
+  padding: 0 !important;
+}
+
+.col-xs-2,
+.col-xs-6,
+.col-xs-4,
+.col-xs-8 {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+.nav-item {
+  border: 1px solid #fff !important;
+  margin: 2px;
+  padding: 10px;
+  width: 40px !important;
+  font-size: 18px;
+  text-align: center;
+  color: #fff;
+  cursor: pointer;
+}
+.search-nav-item {
+  padding: 0px !important;
+}
+.search-nav-item-icon {
+  border: 1px solid #c30101 !important;
+  background-color: #fff;
+  padding: 10px;
+  color: #c30101;
+}
+.slider-style {
+  width: 45px;
+}
+
+.content {
+  max-width: 600px;
+  max-height: 600px;
+  margin: 0 auto;
+}
+.content-container {
+  margin-top: 40px;
+  margin-left: 5px;
+}
+
+.content-body {
+  background-color: #c30101;
+  border: 1px solid #fff;
+  height: 400px;
+  background-size: cover;
+  background-position: center bottom;
+  background-repeat: no-repeat;
+  position: relative;
+}
+
+.slick-list {
+  min-height: 400px;
+}
+.down-chevron {
+  color: #fff;
+  padding-left: 15px;
+}
+.nav-body {
+  height: 400px;
+  padding-left: 0 !important;
+}
+.logo-body {
+  color: #fff;
+  font-size: 55px;
+  line-height: 55px;
+  position: relative;
+  top: 5px;
+  text-align: left;
+  position: relative;
+  left: 30px;
+}
+.page-title-body {
+  text-align: center;
+  padding-top: 35px;
+  color: #fff;
+  font-size: 10px;
+  font-style: italic;
+}
+.color-white {
+  color: #fff;
+}
+.color-red {
+  color: #c30101;
+}
+
+.drink-icon {
+  font-size: 10px;
+  position: relative;
+  top: -1px;
+  left: 5px;
+}
+.big-drink-icon {
+  font-size: 35px !important;
+}
+.cat-nav-body {
+  padding-right: 3px !important;
+  margin-top: 30px;
+}
+.cat-nav-container div {
+  text-align: right;
+  color: #fff;
+  text-transform: lowercase;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-right: 5px;
+  font-size: 12px;
+}
+.cat-nav-container div:hover {
+  color: #c30101;
+  background-color: #fff;
+  cursor: pointer;
+}
+
+.slick-next {
+  display: none !important;
+}
+.slick-prev {
+  font-size: 0;
+  line-height: 0;
+
+  position: absolute;
+  bottom: -25px !important;
+  left: 13px !important;
+  top: auto !important;
+
+  display: block;
+
+  width: 20px;
+  height: 20px;
+  padding: 0;
+  -webkit-transform: translate(0, -50%);
+  -ms-transform: translate(0, -50%);
+  transform: translate(0, -50%);
+
+  -webkit-transform: rotate(-90deg);
+  -moz-transform: rotate(-90deg);
+  -o-transform: rotate(-90deg);
+  -ms-transform: rotate(-90deg);
+  transform: rotate(-90deg);
+
+  cursor: pointer;
+
+  color: transparent;
+  border: none;
+  outline: none;
+  background: transparent;
+}
+
+.search-input {
+  outline: 0;
+  border-width: 1px;
+  border-style: solid;
+  border-color: #eee;
+  color: #fff;
+  width: 100%;
+  font-size: 23px;
+  background-color: rgba(255, 255, 255, 0.8);
+  text-transform: lowercase;
+  padding: 5px 40px 5px 15px;
+  color: #c30101;
+  border-radius: 20px;
+  box-shadow: none !important;
+  outline-color: #eee;
+}
+
+.search-input-container {
+  width: 100%;
+  max-width: 380px;
+  margin-left: 15px;
+  padding-right: 15px;
+  position: absolute;
+  top: 70%;
+}
+
+.search-box-icon {
+  color: #c30101;
+  font-size: 30px;
+  position: absolute;
+  right: 25px;
+  bottom: 10px;
+  z-index: 10;
+  cursor: pointer;
+}
+.fl {
+  float: left;
+}
+.fr {
+  float: right;
+}
+
+.fr div.drink-box {
+  float: right;
+}
+
+.drink-box {
+  width: 100%;
+  min-width: 180px;
+  max-width: 300px;
+  padding: 10px;
+  background-color: rgba(255, 255, 255, 0.8);
+  margin-top: 20px;
+  margin-bottom: 12px;
+  box-shadow: 3px 3px 1px rgba(0, 0, 0, 0.3);
+  position: relative;
+  /* margin-right:20px;
+    margin-left:20px; */
+}
+
+.drink-list-container {
+  padding-left: 10px;
+  padding-right: 10px;
+  height: 400px;
+  overflow: hidden;
+}
+
+.db-title {
+  text-align: center;
+  font-size: 16px;
+  text-transform: uppercase;
+  font-weight: bold;
+  text-decoration: underline;
+  padding-right: 20px;
+}
+
+.db-ingredients {
+  font-size: 14px;
+}
+.db-instructions {
+  margin-top: 10px;
+  font-style: italic;
+  font-size: 13px;
+}
+.db-category {
+  text-align: right;
+  font-size: 12px;
+  text-transform: lowercase;
+}
+.db-glass {
+  text-align: right;
+  font-size: 12px;
+  text-transform: lowercase;
+}
+.list-loader {
+  width: 100%;
+  clear: both;
+  text-align: center;
+
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+.list-loader > div {
+  cursor: pointer;
+}
+
+.dl-wrapper {
+  width: 100%;
+  height: 400px;
+  overflow: hidden;
+  padding-right: 20px;
+}
+
+.dl-scroller {
+  width: 115%;
+  min-width: 225px;
+  height: 415px;
+  overflow: auto;
+}
+.list-container {
+  padding-left: 10px;
+  padding-right: 20px;
+  padding-bottom: 50px;
+}
+
+.ln-wrapper {
+  width: 55px;
+  height: 400px;
+  overflow: hidden;
+  padding-right: 20px;
+}
+
+.ln-scroller {
+  width: 75px;
+  height: 415px;
+  overflow: auto;
+}
+.letternav-container {
+  padding-bottom: 14px;
+}
+
+.search-tag {
+  text-align: center;
+  color: #c30101;
+  font-size: 11px;
+}
