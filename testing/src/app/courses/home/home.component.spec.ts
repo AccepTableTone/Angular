@@ -38,7 +38,9 @@ describe("HomeComponent", () => {
     "findAllCourses"
   ]);
 
+  /** the async test zone finds all the promises in it's block and waits for them */
   beforeEach(async(() => {
+    /** we use async because potentially some components compile asynchronously */
     TestBed.configureTestingModule({
       imports: [CoursesModule, NoopAnimationsModule],
       providers: [{ provide: CoursesService, useValue: courseServiceSpy }]
@@ -83,7 +85,7 @@ describe("HomeComponent", () => {
     expect(tabs.length).toBe(2, "Unexpected number of tabs found");
   });
 
-  it("should display advanced courses when tab clicked", fakeAsync(() => {
+  it("should display advanced courses when tab clicked - fake async zone", fakeAsync(() => {
     coursesService.findAllCourses.and.returnValue(of(allCourses));
     fixture.detectChanges();
 
@@ -107,5 +109,35 @@ describe("HomeComponent", () => {
     expect(cardTitles[0].nativeElement.textContent).toContain(
       "Angular Security Course"
     );
+  }));
+
+  it("should display advanced courses when tab clicked - async zone", async(() => {
+    /** NOTE 'async' supports http calls (usually for integration tests - example of use in unit test ...
+     * the template isn't local) - 'fakeAsync' does not */
+
+    coursesService.findAllCourses.and.returnValue(of(allCourses));
+    fixture.detectChanges();
+
+    const tabs = el.queryAll(By.css(".mat-tab-label"));
+    /**use the testing utility function */
+    click(tabs[1]);
+
+    /** there is a ui animation - so detecting changes here isn't useful */
+    /** !! need to detect before flushing task queue */
+    fixture.detectChanges();
+
+    /** can't use flush in async zone */
+    //flush();
+
+    /** 'whenStable' - callback from async that waits for everything - returns a promise */
+    fixture.whenStable().then(() => {
+      const cardTitles = el.queryAll(By.css(".mat-card-title"));
+
+      expect(cardTitles.length).toBeGreaterThan(0, "Could not find any titles");
+
+      expect(cardTitles[0].nativeElement.textContent).toContain(
+        "Angular Security Course"
+      );
+    });
   }));
 });
