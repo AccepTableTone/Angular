@@ -1,8 +1,26 @@
 import { fakeAsync, tick, flush, flushMicrotasks } from "@angular/core/testing";
+import { Observable, of } from "rxjs";
+import { delay } from "rxjs/operators";
 
 /** default test timeout is 5 seconds */
 
-fdescribe("Async testing example", () => {
+describe("Async testing example", () => {
+  /** NEEDS AN EXPLANATION  e!--[../] */
+  it("Asynchronous example - observable", fakeAsync(() => {
+    let test = false;
+    const test$ = of(test).pipe(delay(1000));
+
+    test$.subscribe(() => {
+      test = true;
+    });
+
+    /** flush doesn't work ?? find out why*/
+    //flush();
+    tick(1000);
+
+    expect(test).toBeTruthy();
+  }));
+
   it("Asynchronous test - task and microtask - setTimeout and Promise", fakeAsync(() => {
     let counter = 0;
 

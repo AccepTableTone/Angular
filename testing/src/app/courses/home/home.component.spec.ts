@@ -90,8 +90,9 @@ describe("HomeComponent", () => {
     const tabs = el.queryAll(By.css(".mat-tab-label"));
     /**use the testing utility function */
     click(tabs[1]);
+    /** there is a ui animation - so detecting changes here isn't useful */
     fixture.detectChanges();
-    
+    /**we set a timeout to wait for the animation */
     setTimeout(() => {
       const cardTitles = el.queryAll(By.css(".mat-card-title"));
 

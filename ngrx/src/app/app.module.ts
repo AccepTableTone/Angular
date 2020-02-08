@@ -55,7 +55,8 @@ const routes: Routes = [
     StoreDevtoolsModule.instrument({
       maxAge: 25,
       logOnly: environment.production
-    })
+    }),
+    EffectsModule.forRoot([])
   ],
   bootstrap: [AppComponent]
 })
