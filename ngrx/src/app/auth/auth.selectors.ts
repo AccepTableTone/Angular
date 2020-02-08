@@ -1,8 +1,12 @@
-import { createSelector } from "@ngrx/store";
+import { createSelector, createFeatureSelector } from "@ngrx/store";
+import { AuthState } from "./reducers";
+
+/** feature selectors are a type safe selectors*/
+export const selectAuthState = createFeatureSelector<AuthState>("auth");
 
 /** mapping function that has memory - memoized function */
 export const isLoggedIn = createSelector(
-  state => state["auth"] /**mapping function */,
+  selectAuthState /**mapping function */,
   authState => !!authState.user
 );
 
