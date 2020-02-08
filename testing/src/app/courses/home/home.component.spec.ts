@@ -83,25 +83,29 @@ describe("HomeComponent", () => {
     expect(tabs.length).toBe(2, "Unexpected number of tabs found");
   });
 
-  it("should display advanced courses when tab clicked", (done: DoneFn) => {
+  it("should display advanced courses when tab clicked", fakeAsync(() => {
     coursesService.findAllCourses.and.returnValue(of(allCourses));
     fixture.detectChanges();
 
     const tabs = el.queryAll(By.css(".mat-tab-label"));
     /**use the testing utility function */
     click(tabs[1]);
+
     /** there is a ui animation - so detecting changes here isn't useful */
+    /** !! need to detect before flushing task queue */
     fixture.detectChanges();
-    /**we set a timeout to wait for the animation */
-    setTimeout(() => {
-      const cardTitles = el.queryAll(By.css(".mat-card-title"));
 
-      expect(cardTitles.length).toBeGreaterThan(0, "Could not find any titles");
-      expect(cardTitles[0].nativeElement.textContent).toContain(
-        "Angular Security Course"
-      );
+    /** there must be some waiting code on the UI - requestAnimationFrame? - so we want to flush that task queue */
+    /** you could try flushMicrotasks - here it does not work so its a settimeout or
+     * requestAnimationFrame - but might in others - flush is the biggest catch */
+    flush();
 
-      done();
-    }, 500);
-  });
+    const cardTitles = el.queryAll(By.css(".mat-card-title"));
+
+    expect(cardTitles.length).toBeGreaterThan(0, "Could not find any titles");
+
+    expect(cardTitles[0].nativeElement.textContent).toContain(
+      "Angular Security Course"
+    );
+  }));
 });

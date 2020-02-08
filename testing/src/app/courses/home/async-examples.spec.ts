@@ -14,7 +14,7 @@ describe("Async testing example", () => {
       test = true;
     });
 
-    /** flush doesn't work ?? find out why*/
+    /** flush doesn't work ?? find out why - delay isn't in the task or microtask queue*/
     //flush();
     tick(1000);
 
